@@ -55,11 +55,11 @@ def main(access_token, access_secret, out_file):
         sys.stdout.flush()
 
         if message.startswith("!twitter "):
-            sys.stdout.write("twitter: %s\n", message.split(" ", 1)[1])
+            sys.stdout.write("twitter: %s" % message.split(" ", 1)[1])
             sys.stdout.flush()
             handle_twitter(twitter, message, in_file)
         elif message.startswith("!count "):
-            sys.stdout.write("count: %s\n", message.split(" ", 1)[1])
+            sys.stdout.write("count: %s" % message.split(" ", 1)[1])
             sys.stdout.flush()
             handle_count(message, in_file)
 
