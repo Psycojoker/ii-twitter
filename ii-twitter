@@ -2,6 +2,7 @@
 # encoding: utf-8
 
 import re
+import sys
 import argh
 import tweepy
 from os import path
@@ -50,13 +51,16 @@ def main(access_token, access_secret, out_file):
             continue
 
         nick = nick[1:-1]
-        print date, time, nick, message
+        sys.stdout.write("%s %s %s: %s" % date, time, nick, message)
+        sys.stdout.flush()
 
         if message.startswith("!twitter "):
-            print "twitter:", message
+            sys.stdout.write("twitter: %s\n", message.split(" ", 1)[1])
+            sys.stdout.flush()
             handle_twitter(twitter, message, in_file)
         elif message.startswith("!count "):
-            print "count:", message
+            sys.stdout.write("count: %s\n", message.split(" ", 1)[1])
+            sys.stdout.flush()
             handle_count(message, in_file)
 
 
