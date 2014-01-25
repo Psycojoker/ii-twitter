@@ -4,7 +4,7 @@
 from setuptools import setup
 
 setup(name='ii-twitter',
-      version='0.1',
+      version='0.1.1',
       description='shell command for a twitter bot intant to be used with ii',
       author='Laurent Peuch',
       #long_description='',
