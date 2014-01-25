@@ -44,7 +44,7 @@ def handle_count(message, in_file):
 def main(access_token, access_secret, out_file):
     in_file = path.join(path.split(out_file)[0], "in")
     twitter = api(access_token, access_secret)
-    for line in tail(out_file, f=True, _iter=True, n=40):
+    for line in tail(out_file, f=True, _iter=True, n=0):
         date, time, nick, message = line.split(" ", 3)
         if not nick.startswith("<"):
             continue
