@@ -51,7 +51,7 @@ def main(access_token, access_secret, out_file):
             continue
 
         nick = nick[1:-1]
-        sys.stdout.write("%s %s %s: %s" % date, time, nick, message)
+        sys.stdout.write("%s %s %s: %s" % (date, time, nick, message))
         sys.stdout.flush()
 
         if message.startswith("!twitter "):
